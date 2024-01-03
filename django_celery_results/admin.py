@@ -65,7 +65,7 @@ class TaskResultAdmin(admin.ModelAdmin):
                 field.name for field in self.opts.local_fields
             })
 
-
+admin.site.unregister(GroupResult)
 admin.site.register(TaskResult, TaskResultAdmin)
 
 
@@ -79,5 +79,6 @@ class GroupResultAdmin(admin.ModelAdmin):
     readonly_fields = ('date_created', 'date_done', 'result')
     search_fields = ('group_id',)
 
-
+admin.site.unregister(GroupResult)
 admin.site.register(GroupResult, GroupResultAdmin)
+
